@@ -20,3 +20,8 @@ a.x = 1;
 b.y = 1;
 Console.WriteLine(a);
 Console.WriteLine(b);
+
+Vector3[] poses = new Vector3[5];
+foreach (var pos in poses) {
+    Console.WriteLine(pos);
+}
