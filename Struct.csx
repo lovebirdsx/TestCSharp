@@ -21,7 +21,16 @@ b.y = 1;
 Console.WriteLine(a);
 Console.WriteLine(b);
 
-Vector3[] poses = new Vector3[5];
+Vector3[] poses = new Vector3[2];
+foreach (var pos in poses) {
+    Console.WriteLine(pos);
+}
+
+// 注意此处是拷贝赋值,改变pos并不会改变poses中的值
+Vector3 pos = poses[1];
+pos.x = 100;
+pos.y = 100;
+
 foreach (var pos in poses) {
     Console.WriteLine(pos);
 }
