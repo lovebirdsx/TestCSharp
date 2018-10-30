@@ -54,7 +54,51 @@ public struct Mask {
         }
 
         return EnumsToMask(enums);
-    }
-
-    
+    }   
 }
+
+public string ToBitsString(int mask) {
+	List<string> result = new List<string>();
+	var values = Enum.GetValues(typeof(Bits));
+	for (int i = 0; i < values.Length; i++) {
+		int value = (int) values.GetValue(i);
+		if ((mask & value) > 0) {
+			result.Add(Enum.GetName(typeof(Bits), value));
+		}
+	}
+	return string.Join(",", result.ToArray());
+}
+
+public enum Bits {
+	Bit0 = 1 << 0,
+	Bit1 = 1 << 1,
+	Bit2 = 1 << 2,
+	Bit3 = 1 << 3,
+	Bit4 = 1 << 4,
+	Bit5 = 1 << 5,
+	Bit6 = 1 << 6,
+}
+
+int mask = 7;
+
+Console.WriteLine(ToBitsString(mask));
+
+public int ResetBit(int mask, Bits value) {
+	int valueMask = Convert.ToInt32(value);
+	mask = (mask & ~valueMask);
+	return mask;
+}
+
+public static int SetBit(int mask, Bits value) {
+	int valueMask = Convert.ToInt32(value);
+	mask = (mask | valueMask);
+	return mask;
+}
+
+public static bool BitAnd(int mask, Bits value) {
+	int valueMask = Convert.ToInt32(value);
+	return (mask & valueMask) > 0;
+}
+
+Console.WriteLine(ToBitsString(SetBit(mask, Bits.Bit6)));
+Console.WriteLine(ToBitsString(ResetBit(mask, Bits.Bit1)));
