@@ -42,3 +42,17 @@ void OutputDay(WeekDay day) {
 }
 
 OutputDay(WeekDay.Monday);
+
+bool TestFoo(int foo) {
+    switch (foo) {
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+            return true;
+        default:
+            return false;
+    }
+}
+
+Console.WriteLine(TestFoo(1));
