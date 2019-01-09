@@ -20,6 +20,7 @@ string CovertTimeStr(float totalSeconds) {
 Console.WriteLine(CovertTimeStr(90));
 Console.WriteLine(CovertTimeStr(70));
 
+Console.WriteLine(string.Format("{0:f}", 1.2));
 Console.WriteLine(string.Format("{0:f}", 1.2345));
 Console.WriteLine(string.Format("{0:f}", 2.2345));
 Console.WriteLine(string.Format("{0:f}", 11.2345));

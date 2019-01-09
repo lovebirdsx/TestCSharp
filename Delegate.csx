@@ -18,3 +18,25 @@ print2 += Bar;
 print2(2);
 print2 -= Bar;
 print2(2);
+
+delegate bool ConditionHandler();
+ConditionHandler conditions;
+
+bool ConditionA() {
+    return true;
+}
+
+bool ConditionB() {
+    return false;
+}
+
+if (conditions != null)
+    conditions.Invoke();
+
+conditions += ConditionA;
+conditions += ConditionB;
+
+// conditions();
+foreach(ConditionHandler c in conditions.GetInvocationList()) {
+    Console.WriteLine("{0} = {1}", c.Method.Name, c());
+}
