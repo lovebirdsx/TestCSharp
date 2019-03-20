@@ -200,6 +200,10 @@ public class CommandArgs {
         return (this[argument] != null && this[argument].Count > 0);
     }
 
+    public IEnumerable<string> GetArgNames() {
+        return _parameters.Keys;
+    }
+
     /// <summary>
     /// Gets the <see cref="System.Collections.ObjectModel.Collection&lt;T&gt;"/> with the specified parameter.
     /// </summary>
@@ -220,6 +224,8 @@ string[] args = {
 };
 
 CommandArgs cmdArgs = new CommandArgs(args);
-Console.WriteLine(cmdArgs.Single("path"));
-Console.WriteLine(cmdArgs.Single("locationPathName"));
-Console.WriteLine(cmdArgs.IsTrue("fuck"));
+var argNames = cmdArgs.GetArgNames();
+foreach (var arg in argNames) {
+    var value = cmdArgs[arg][0];
+    Console.WriteLine("{0} = {1}", arg, value);
+}
