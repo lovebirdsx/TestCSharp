@@ -32,4 +32,10 @@ void Test2() {
     Console.WriteLine(result);
 }
 
-Test2()
+void Test3() {
+    var path = "Assets/Resources/Maps/map_test3.prefab";
+    var match = Regex.Match(path, @"Assets/Resources/Maps/([\w\d]+).prefab");
+    Console.WriteLine($"result is {match.Success}");
+}
+
+Test3()
