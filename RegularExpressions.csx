@@ -38,4 +38,31 @@ void Test3() {
     Console.WriteLine($"result is {match.Success}");
 }
 
-Test3()
+// 测试是否为合法的变量名
+void Test4() {
+    string[] names = {"a1", "_a", "a1_1", "1", "1a"};
+    foreach (var name in names) {
+        var match = Regex.Match(name, @"^[a-zA-Z_$][a-zA-Z_$0-9]*$");
+        Console.WriteLine($"{name} {match.Success}");
+    }
+}
+
+// 测试是否为合法的lua字符串
+void Test5() {
+    string[] names = {"'a1'", "'_a", "a1_1", "ab_action", "'1001'", "'123"};
+    foreach (var name in names) {
+        var match = Regex.Match(name, @"^\'\w+\'$");
+        Console.WriteLine($"{name} {match.Success}");
+    }
+}
+
+// 测试是否为合法的lua数字
+void Test6() {
+    string[] names = {"123", "1.1", "1.10", "1.34", "1001", "'123"};
+    foreach (var name in names) {
+        var match = Regex.Match(name, @"^(\-|\+)?\d+(\.\d+)?$");
+        Console.WriteLine($"{name} {match.Success}");
+    }
+}
+
+Test5();
