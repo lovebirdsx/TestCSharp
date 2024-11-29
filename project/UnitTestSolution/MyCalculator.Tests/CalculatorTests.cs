@@ -1,7 +1,3 @@
-using Xunit;
-using MyCalculator;
-using System;
-
 namespace MyCalculator.Tests
 {
     public class CalculatorTests
