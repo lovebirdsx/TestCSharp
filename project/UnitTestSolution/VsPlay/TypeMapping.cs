@@ -7,9 +7,8 @@ namespace VsPlay
     {
         private static readonly Dictionary<string, Type> Mapping = new()
         {
-            { "A", typeof(A) },
-            { "B", typeof(B) }
-            // 添加更多类型映射
+            { nameof(SampleEntity), typeof(SampleEntity) },
+            { nameof(SampleQuest), typeof(SampleQuest) }
         };
 
         public static Type GetType(string typeName)

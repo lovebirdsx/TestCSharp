@@ -2,29 +2,29 @@
 {
     public class Base
     {
-        public string Type { get; set; } = "unknown";
     }
 
-    public class A : Base
+    public class SymbolFileBase: Base
     {
-        public A()
-        {
-            Type = "A";
-            AValue = 0;
-        }
-
-        public int AValue { get; set; }
     }
 
-    public class B : Base
+    public class SampleEntity : SymbolFileBase
     {
-        public B()
+        public SampleEntity()
         {
-            Type = "B";
-            BValue = "B";
         }
 
-        public string BValue { get; set; }
+        public int AValue = 1;
+        public int? NullableValue;
+    }
+
+    public class SampleQuest : SymbolFileBase
+    {
+        public SampleQuest()
+        {
+        }
+
+        public string BValue = "B";
     }
 }
 
