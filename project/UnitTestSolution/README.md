@@ -24,4 +24,5 @@ dotnet test
 ## 项目介绍
 
 * MyCalculator: 一个简单的计算器类库
-* VsPlay VsPlay相关测试代码
+* VsPlay: VsPlay相关测试代码
+* Inject: 依赖注入相关测试代码

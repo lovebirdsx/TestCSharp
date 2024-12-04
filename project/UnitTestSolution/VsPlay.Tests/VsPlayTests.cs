@@ -72,5 +72,17 @@ namespace VsPlay.Tests
             Assert.IsType<SampleEntity>(obj);
             Assert.Equal(10, ((SampleEntity)obj).NullableValue);
         }
+
+        [Fact]
+        public void TestDeserializeToExistObject()
+        {
+            var settings = new JsonSerializerSettings();
+            settings.Converters.Add(new BaseConverter());
+
+            var obj = new SampleEntity();
+            var json = "{\"Type\":\"SampleEntity\",\"AValue\":10}";
+            JsonConvert.PopulateObject(json, obj, settings);
+            Assert.Equal(10, obj.AValue);
+        }
     }
 }

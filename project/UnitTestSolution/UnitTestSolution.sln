@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VsPlay", "VsPlay\VsPlay.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VsPlay.Tests", "VsPlay.Tests\VsPlay.Tests.csproj", "{E22C3F72-666E-4DBD-AAD1-0F5A920E1830}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inject", "Inject\Inject.csproj", "{1C24CE66-B784-4849-AFEC-2CFE996DFB37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inject.Tests", "Inject.Tests\Inject.Tests.csproj", "{D7C9A2C7-3A70-4606-B356-29F359344F8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +40,13 @@ Global
 		{E22C3F72-666E-4DBD-AAD1-0F5A920E1830}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E22C3F72-666E-4DBD-AAD1-0F5A920E1830}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E22C3F72-666E-4DBD-AAD1-0F5A920E1830}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C24CE66-B784-4849-AFEC-2CFE996DFB37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C24CE66-B784-4849-AFEC-2CFE996DFB37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C24CE66-B784-4849-AFEC-2CFE996DFB37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C24CE66-B784-4849-AFEC-2CFE996DFB37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7C9A2C7-3A70-4606-B356-29F359344F8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7C9A2C7-3A70-4606-B356-29F359344F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7C9A2C7-3A70-4606-B356-29F359344F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7C9A2C7-3A70-4606-B356-29F359344F8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
