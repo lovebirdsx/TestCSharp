@@ -12,9 +12,13 @@ public class PaymentDetails
     public required string PaymentMethod { get; set; }
 }
 
-public interface IOrderRepository
+public interface IOrderSaver
 {
     void Save(Order order);
+}
+
+public interface IOrderRepository : IOrderSaver
+{
     Order? Get(int orderId);
 }
 

@@ -20,4 +20,14 @@ public class OrderServiceCollectionTests
 
         orderService.CreateOrder(new Order { Product = "Book", Amount = 29.99M }, new PaymentDetails { PaymentMethod = "PayPal" });
     }
+
+    [Fact]
+    public void ServiceTheSame()
+    {
+        var provider = OrderServiceCollection.CreateProvider();
+        var orderSaver = provider.GetRequiredService<IOrderSaver>();
+        var orderRepository = provider.GetRequiredService<IOrderRepository>();
+
+        Assert.Same(orderSaver, orderRepository);
+    }
 }

@@ -8,6 +8,10 @@ public class OrderServiceCollection
     {
         var serviceCollection = new ServiceCollection();
         serviceCollection.AddSingleton<IOrderRepository, OrderRepository>();
+        
+        // 确保 IOrderSaver 的实现是 IOrderRepository
+        serviceCollection.AddSingleton<IOrderSaver>(provider => provider.GetRequiredService<IOrderRepository>());
+
         serviceCollection.AddSingleton<INotificationService, NotificationService>();
         serviceCollection.AddSingleton<IPaymentProcessor, PaymentProcessor>();
         serviceCollection.AddSingleton<OrderService>();

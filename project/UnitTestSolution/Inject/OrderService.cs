@@ -1,14 +1,14 @@
 namespace Inject;
 
-public class OrderService(IOrderRepository orderRepository, IPaymentProcessor paymentProcessor, INotificationService notificationService)
+public class OrderService(IOrderSaver orderSaver, IPaymentProcessor paymentProcessor, INotificationService notificationService)
 {
-    private readonly IOrderRepository _orderRepository = orderRepository;
+    private readonly IOrderSaver _orderSaver = orderSaver;
     private readonly IPaymentProcessor _paymentProcessor = paymentProcessor;
     private readonly INotificationService _notificationService = notificationService;
 
     public void CreateOrder(Order order, PaymentDetails paymentDetails)
     {
-        _orderRepository.Save(order);
+        _orderSaver.Save(order);
         bool paymentSuccess = _paymentProcessor.ProcessPayment(order, paymentDetails);
         if (paymentSuccess)
         {
