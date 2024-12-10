@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inject", "Inject\Inject.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inject.Tests", "Inject.Tests\Inject.Tests.csproj", "{D7C9A2C7-3A70-4606-B356-29F359344F8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csharp.Tests", "Csharp.Tests\Csharp.Tests.csproj", "{11D70C20-2937-46B7-B0D3-C09414C3FE80}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{D7C9A2C7-3A70-4606-B356-29F359344F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7C9A2C7-3A70-4606-B356-29F359344F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7C9A2C7-3A70-4606-B356-29F359344F8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11D70C20-2937-46B7-B0D3-C09414C3FE80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11D70C20-2937-46B7-B0D3-C09414C3FE80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11D70C20-2937-46B7-B0D3-C09414C3FE80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11D70C20-2937-46B7-B0D3-C09414C3FE80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

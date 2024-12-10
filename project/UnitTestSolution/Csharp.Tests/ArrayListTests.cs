@@ -1,4 +1,4 @@
-namespace MyCalculator.Tests;
+namespace Csharp.Tests;
 
 public class ArrayListTests 
 {
