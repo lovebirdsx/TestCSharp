@@ -74,7 +74,7 @@ public class TaskTests : IDisposable
     public async Task Await_Time_IsNotInTheSameThread()
     {
         int threadId = Environment.CurrentManagedThreadId;
-        await Task.Delay(1000);
+        await Task.Delay(100);
         int threadId2 = Environment.CurrentManagedThreadId;
 
         Assert.NotEqual(threadId, threadId2);
@@ -85,11 +85,35 @@ public class TaskTests : IDisposable
     {
         int threadId = Environment.CurrentManagedThreadId;
         SynchronizationContext context = SynchronizationContext.Current!;
-        await Task.Delay(1000);
+        await Task.Delay(100);
         context.Post(_ =>
         {
             int threadId2 = Environment.CurrentManagedThreadId;
             Assert.Equal(threadId, threadId2);
         }, null);
+    }
+
+    [Fact]
+    public void Await_Time_IsInTheSameThread2()
+    {
+        int threadId = Environment.CurrentManagedThreadId;
+        Task task = Task.Delay(100);
+        task.Wait();
+        int threadId2 = Environment.CurrentManagedThreadId;
+        Assert.Equal(threadId, threadId2);
+    }
+
+    [Fact]
+    public async Task Await_AfterTaskRun_IsNotInTheSameThread()
+    {
+        int threadId = Environment.CurrentManagedThreadId;
+        await Task.Run(() =>
+        {
+            int threadId2 = Environment.CurrentManagedThreadId;
+            Assert.NotEqual(threadId, threadId2);
+        });
+
+        int threadId3 = Environment.CurrentManagedThreadId;
+        Assert.NotEqual(threadId, threadId3);
     }
 }
