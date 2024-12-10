@@ -69,4 +69,27 @@ public class TaskTests : IDisposable
         // 文件处理的回调是在另一个线程上执行的
         Assert.NotEqual(threadId, threadId2);
     }
+
+    [Fact]
+    public async Task Await_Time_IsNotInTheSameThread()
+    {
+        int threadId = Environment.CurrentManagedThreadId;
+        await Task.Delay(1000);
+        int threadId2 = Environment.CurrentManagedThreadId;
+
+        Assert.NotEqual(threadId, threadId2);
+    }
+
+    [Fact]
+    public async Task Await_Time_IsInTheSameThread()
+    {
+        int threadId = Environment.CurrentManagedThreadId;
+        SynchronizationContext context = SynchronizationContext.Current!;
+        await Task.Delay(1000);
+        context.Post(_ =>
+        {
+            int threadId2 = Environment.CurrentManagedThreadId;
+            Assert.Equal(threadId, threadId2);
+        }, null);
+    }
 }
