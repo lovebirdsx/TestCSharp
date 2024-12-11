@@ -98,7 +98,9 @@ public class TaskTests : IDisposable
     {
         int threadId = Environment.CurrentManagedThreadId;
         Task task = Task.Delay(100);
+#pragma warning disable xUnit1031
         task.Wait();
+#pragma warning restore xUnit1031
         int threadId2 = Environment.CurrentManagedThreadId;
         Assert.Equal(threadId, threadId2);
     }
